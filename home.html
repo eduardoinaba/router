@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title >Backup</title>
+        {% load static %}
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->  
+    
+</head>
+<body>
+    <div class="page-header">
+        <a href="/"><img {% load static %} src="{% static '/admin/img/youricon.png'  %}" /></p></a>
+    </div>
+
+    <div class="container">
+        {% load static %}
+
+        <div class="titulo">
+            <h1><a href="/">Backup</a></h1>
+        </div>
+
+        <div>
+            <div>
+                <form method="post" action="/getdata/" onsubmit="makeProgress()">
+                    <div>
+                        <label>Equipment:</label>
+                    </div>
+                    <div>
+                        <select required id="test" name="name" type="text">
+                            <option value="">None</option>
+                            <option value="HOSTNAME">Todos</option>                           
+                        </select>
+                    </div>
+                    <div>
+                        <label>Login:</label>
+                    </div>
+                    <div>
+                        <input type="text" name="user" required/>
+                    </div>
+
+                    <div>
+                        <label>Password:</label>
+                    </div>
+                    <div>
+                        <input type="password" name="password" required placeholder="********" />
+                    </div>
+                    <div>
+                        <button id="start" name="tipo" value="normal">Run separate backup</button>
+                    </div>
+                    <div>
+                        <button id="start1" name="tipo" value="plus">Run asynchronous backup</button>
+                    </div>
+
+                </form>
+            </div>          
+            <div class="getequip">
+                <form method="post" action="/getdata/">
+                    <label><p>{{name}}</p></label>
+                </form>
+            </div>
+        </div>             
+    </div>
+</body>
+</html>
